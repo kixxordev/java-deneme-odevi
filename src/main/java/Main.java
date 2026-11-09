@@ -88,7 +88,7 @@ public class Main {
 
                      }
                     } else {
-                    System.out.println("Gecersiz sayilar girdigin icin islemin spnlandirildi.");
+                    System.out.println("Gecersiz sayilar girdigin icin islemin sonlandirildi.");
                 }
             }
             
