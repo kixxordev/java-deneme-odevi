@@ -28,67 +28,66 @@ public class Main {
                 System.exit(0);
                 
             } else {
-                
-                int bos = 20 - (dogru + yanlis);
-                int gDogru = yanlis / 4 ; // 4 yanlıştan dolayı giden doğru sayısı
-                int net = dogru - gDogru;
-                
-                    /*
-                    Başarı kriterleri yazılmamıştı, ben de kendim karar verdim.
+                if(dogru + yanlis <= 20) {
+                    
+                    int bos = 20 - (dogru + yanlis);
+                    int gDogru = yanlis / 4 ; // 4 yanlıştan dolayı giden doğru sayısı
+                    int net = dogru - gDogru;
 
-                    0-4 Net -> Başarısız
-                    5-9 Net -> Orta Başarısız
-                    10-14 Net -> Orta Başarılı
-                    15-20 -> Başarılı
+                        /*
+                        -5 - 5 Net -> Geliştirilmeli
+                        6-9 Net -> Orta
+                        10-14 Net -> İyi
+                        15-20 -> Çok İyi
 
-                    */
-                
-                if(net >= 15 && net <= 20) {
-                    
-                    System.out.println("Sinav sonucun: " + dogru + " dogru, " + yanlis + " yanlis, " + bos + " bos.");
-                    System.out.println("Net Sayin: " + net);
-                    System.out.println("Net sayina gore basari durumun: Basarili");
-                    
-                    
-                } else {
-                    
-                    if (net >= 10 && net < 15) {
-                        
+                        */
+
+                    if(net >= 15 && net <= 20) {
+
                         System.out.println("Sinav sonucun: " + dogru + " dogru, " + yanlis + " yanlis, " + bos + " bos.");
                         System.out.println("Net Sayin: " + net);
-                        System.out.println("Net sayina gore basari durumun: Orta Basarili");
-                    
-                        
+                        System.out.println("Net sayina gore basari durumun: Cok İyi");
+
+
                     } else {
-                        
-                        if (net >= 5 && net < 10) {
-                            
+
+                        if (net >= 10 && net < 15) {
+
                             System.out.println("Sinav sonucun: " + dogru + " dogru, " + yanlis + " yanlis, " + bos + " bos.");
                             System.out.println("Net Sayin: " + net);
-                            System.out.println("Net sayina gore basari durumun: Orta Basarisiz");
-                    
-                            
+                            System.out.println("Net sayina gore basari durumun: İyi");
+
+
                         } else {
-                            
-                            if (net >= 0 && net < 5) {
-                                
+
+                            if (net >= 6 && net < 10) {
+
                                 System.out.println("Sinav sonucun: " + dogru + " dogru, " + yanlis + " yanlis, " + bos + " bos.");
                                 System.out.println("Net Sayin: " + net);
-                                System.out.println("Net sayina gore basari durumun: Basarisiz");
-                    
-                                
+                                System.out.println("Net sayina gore basari durumun: Orta");
+
+
                             } else {
-                                
-                                System.out.println("Hesaplamada bir hata olustu. Program sonlandiriliyor..");
-                                System.exit(0);
-                                
+
+                                if (net >= -5 && net < 6) {
+
+                                    System.out.println("Sinav sonucun: " + dogru + " dogru, " + yanlis + " yanlis, " + bos + " bos.");
+                                    System.out.println("Net Sayin: " + net);
+                                    System.out.println("Net sayina gore basari durumun: Gelistirilmeli");
+
+
+                                } else {
+
+                                    System.out.println("Hesaplamada bir hata olustu. Program sonlandiriliyor..");
+                                    System.exit(0);
+
+                                }
+
                             }
-                            
                         }
+
                     }
-                    
-                }
-                
+                    }
             }
             
         }
